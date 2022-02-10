@@ -11,11 +11,6 @@ module Users
 
     def create
       self.resource = warden.authenticate!(auth_options)
-      if resource.language == "English"
-        I18n.locale = :en
-      elsif resource.language == "Filipino"
-        I18n.locale = :tl
-      end
       flash[:notice] = I18n.t(:sign_in)
       sign_in(resource_name, resource)
       yield resource if block_given?

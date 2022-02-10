@@ -4,6 +4,8 @@ module Users
   class RegistrationsController < Devise::RegistrationsController
     # before_action :configure_sign_up_params, only: [:create]
     # before_action :configure_account_update_params, only: [:update]
+    layout "new_registration", only: [:new, :create]
+    layout "edit_registration", only: [:edit, :update]
 
     # GET /resource/sign_up
     # def new
@@ -15,11 +17,6 @@ module Users
     def create
       build_resource(sign_up_params)
       resource.save
-      if resource.language == "English"
-        I18n.locale = :en
-      elsif resource.language == "Filipino"
-        I18n.locale = :tl
-      end
       if resource.persisted?
         if resource.active_for_authentication?
           flash[:notice] = I18n.t(:sign_up)

@@ -37,7 +37,19 @@
             <path d="M591.817 91.344H626.953V102H578.713V1.63198H591.817V91.344Z" stroke="white" stroke-width="5"/>
         </svg>
 
-        <%= link_to "Start Now" %>
+        <% if user_signed_in? %>
+            <p>
+            <%= link_to journals_path, class: 'btn-start' do%>
+                Start Now
+            <% end %>
+            </p>
+        <% else %>
+            <p>
+            <%= link_to  new_user_registration_path, class: 'btn-start' do%>
+                Start Now
+            <% end %>
+            </p>
+        <% end %>
 
         <section id="section">
             <ul class="icon-list">
