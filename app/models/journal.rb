@@ -10,7 +10,7 @@ class Journal < ApplicationRecord
         if tasks.none?(&:persisted?)
             1
         else
-            tasks.order(position: :asc).last.position + 1
+            tasks.order(position: :asc).last.position + 1.to_s
         end
     end
         

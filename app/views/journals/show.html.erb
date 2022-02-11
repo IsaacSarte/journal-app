@@ -9,7 +9,7 @@
 
 
 <%# Link ng New Task Path %>
-<%= link_to do%>
+<%= link_to new_journal_task_path(@journal) do%>
     <i class="fas fa-plus mr-3" aria-hidden="true"></i> Task
 <% end %>
 
@@ -19,7 +19,7 @@
 <% if @journal.tasks.count == 0 %>
     <p>No Tasks Yet</p>
     <%# Link ng New Task Path %>
-    <%= link_to do%>
+    <%= link_to new_journal_task_path(@journal) do%>
         Add Task Now
     <% end %>
 <% end %>
@@ -27,5 +27,36 @@
 <%# if there is or are tasks available %>
 <% @journal.tasks.each do |task| %>
     <% if task.completed? == false %>
+        
+        <div>
+            <%= task.name %>
+            <br/>
+            
+        </div>
+        <br/>
+        <%= truncate(strip_tags(task.description.to_s), length: 100) %>
+        <br/>
+        <div>
+            <%# show task path %>
+            <%= link_to do%>
+
+            <% end %>
+
+            <%# edit task path %>
+            <%= link_to do%>
+
+            <% end %>
+
+            <%# delete task %>
+            <%= link_to do%>
+
+            <% end %>
+        </div>
     <% end %>
+<% end %>
+
+
+
+<% unless @journal.percent_complete == 0 %>
+
 <% end %>

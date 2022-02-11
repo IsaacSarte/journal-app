@@ -9,4 +9,49 @@ class TasksController < ApplicationController
     def show
         @description = @task.descriptions.build
     end
+
+    def new
+        @task = Task.new
+    end
+
+    def edit
+    end
+
+    def create
+        @task = @journal.tasks.build(task_params)
+        @task.position = @journal.get_next_task_position
+
+        if @task.save
+            redirect_to @journal, notice: 'Task was successfully created'
+        else
+            render :new
+        end
+    end
+
+    def update
+        if @task.update(task_params)
+            redirect_to @journal, notice: 'Task was successfully updated'
+        else
+            render :edit
+        end
+    end
+
+    def destroy
+        @task.destroy
+        redirect_to @journal, notice: 'Task was successfully deleted'
+    end
+
+    private
+
+    def set_journal
+        @journal = current_user.journals.find(params[:journal_id])
+    end
+
+    def set_task
+        @task = @journal.tasks.find(params[:id])
+    end
+
+    def task_params
+        params.require(:task).permit(:name, :description, :deadline, :completed)
+    end
 end

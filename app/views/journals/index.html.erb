@@ -22,13 +22,15 @@
                 Add Task/s
             <% end %>
             <br/>
-            <%= link_to journal_edit_path(journal) do%>
+            <%= link_to edit_journal_path(journal) do%>
                 Edit Category
             <% end %>
             <br/>
             <%= link_to journals_path, method: :delete, data: {confirm: 'Are you sure?'} do%>
                 Delete Category
             <% end %>
+
+            <br/><br/>
 
         <% end %>
     <% end %>

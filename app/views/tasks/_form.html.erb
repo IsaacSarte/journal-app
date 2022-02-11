@@ -1,0 +1,43 @@
+<%= form_with(model: [journal, task]) do |form| %>
+
+  <% if task.errors.any? %>
+
+    <ul>
+        <% task.errors.each do |error| %>
+            <li><%= error.full_message %></li>
+        <% end %>
+    </ul>
+
+   
+  <% end %>
+
+
+    <%= form.text_field :name, placeholder: "Task Name", autocomplete: :off %>
+
+    <%= form.rich_text_area :description, placeholder: "Task Description", autocomplete: :off, maxlength: 2500 %>
+
+
+    <%= form.label :deadline do%>
+        <span>Set Deadline:</span>
+    <% end %>
+    <%= form.date_field :deadline %>
+
+
+  <%= form.label :completed do%>
+    <span>Set Status:</span>
+  <% end %>
+  <%= form.select :completed, Task::COMPLETED_OPTIONS %>
+
+    <%= form.button class: "button start-now-two" do %> 
+        <%= raw '<i class="fas fa-plus mr-3"></i>' if action_name.capitalize == 'Create' %>
+        <%= raw '<i class="fas fa-plus mr-3"></i>' if action_name.capitalize == 'New' %>
+        <%= raw '<i class="fas fa-edit mr-3"></i>' if action_name.capitalize == 'Update' %>
+        <%= raw '<i class="fas fa-edit mr-3"></i>' if action_name.capitalize == 'Edit' %>
+        <%= :new if action_name.capitalize == "New" %><%= :edit if action_name.capitalize == "Edit" %> <%= :task %>
+    <% end %>
+
+      <%= link_to journal do%>
+        Cancel
+      <% end %>
+
+<% end %>
