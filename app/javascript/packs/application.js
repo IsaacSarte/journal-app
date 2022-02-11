@@ -8,6 +8,9 @@ import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 
+require("trix")
+require("@rails/actiontext")
+
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
@@ -19,5 +22,3 @@ window.onload = () => {
         console.log(`Letter ${i} is ${logo[i].getTotalLength()}`);
     }
 }
-
-
