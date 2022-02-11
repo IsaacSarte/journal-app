@@ -24,7 +24,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: "Poppins", sans-serif;
-    overflow: hidden;
+    // overflow: hidden;
 }
 
 body {
@@ -39,7 +39,7 @@ header {
     box-shadow: 0 4px 2px -2px rgb(21, 22, 31);
     display: flex;
     flex-direction: row;
-    padding: 0 4%;
+    padding: 0 10%;
 
     .header-logo {
         margin-top: 1rem;
@@ -186,7 +186,6 @@ header {
     display: inline-flex;
     font-size: 3rem;
     text-decoration: none;
-    color: var(--color-icon);
     width: 6rem;
     height: 6rem;
     transition: .5s linear;
@@ -197,6 +196,7 @@ header {
 
 .icon-link i {
     margin: auto;
+    color: var(--color-icon) !important;
 }
 
 .icon-link::before {

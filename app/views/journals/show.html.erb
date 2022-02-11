@@ -1,0 +1,31 @@
+<%= render 'navbar' %>
+
+<%= @journal.name %>
+
+<%= @journal.percent_complete %> Task Completed
+
+<progress value="<%= @journal.percent_complete %>" max="100">
+</progress>
+
+
+<%# Link ng New Task Path %>
+<%= link_to do%>
+    <i class="fas fa-plus mr-3" aria-hidden="true"></i> Task
+<% end %>
+
+<br/>
+<br/>
+
+<% if @journal.tasks.count == 0 %>
+    <p>No Tasks Yet</p>
+    <%# Link ng New Task Path %>
+    <%= link_to do%>
+        Add Task Now
+    <% end %>
+<% end %>
+
+<%# if there is or are tasks available %>
+<% @journal.tasks.each do |task| %>
+    <% if task.completed? == false %>
+    <% end %>
+<% end %>

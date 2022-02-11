@@ -1,0 +1,36 @@
+<%= render 'navbar' %>
+
+<section id="index-journal" class="index-journal">
+
+    <% @journals.each do |journal| %>
+        <div></div>
+    <% end %>
+
+    <% @journals.each do |journal| %>
+        <% unless @journals.count == 0 %>
+            <%= journal.name %>
+            <br/>
+            <% if journal.tasks.count == 1 %>
+                <%= journal.tasks.count %> Task
+            <% else %>
+                <%= journal.tasks.count %> Tasks
+            <% end %>
+            <br/>
+            Started <%= time_ago_in_words(journal.created_at) %> ago
+            <br/>
+            <%= link_to journal_path(journal) do%>
+                Add Task/s
+            <% end %>
+            <br/>
+            <%= link_to journal_edit_path(journal) do%>
+                Edit Category
+            <% end %>
+            <br/>
+            <%= link_to journals_path, method: :delete, data: {confirm: 'Are you sure?'} do%>
+                Delete Category
+            <% end %>
+
+        <% end %>
+    <% end %>
+
+</section>
