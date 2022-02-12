@@ -27,30 +27,35 @@
 <%# if there is or are tasks available %>
 <% @journal.tasks.each do |task| %>
     <% if task.completed? == false %>
+    <%= raw task_label(task)[:html] %>
         
         <div>
-            <%= task.name %>
-            <br/>
-            
+            <%= task.name %>  
+            <br/>          
+            <%= date_parse(task.deadline) %>
         </div>
-        <br/>
         <%= truncate(strip_tags(task.description.to_s), length: 100) %>
-        <br/>
         <div>
             <%# show task path %>
-            <%= link_to do%>
-
+            <%= link_to journal_task_path(@journal, task) do%>
+                Show Task
             <% end %>
+
+            <br/>
 
             <%# edit task path %>
-            <%= link_to do%>
-
+            <%= link_to edit_journal_task_path(@journal, task) do%>
+                Edit Task
             <% end %>
+
+            <br/>
 
             <%# delete task %>
-            <%= link_to do%>
-
+            <%= link_to journal_task_path(@journal, task), method: :delete, data: {confirm: 'Are you sure?'} do%>
+                Delete Task
             <% end %>
+
+            <br/><br/>
         </div>
     <% end %>
 <% end %>

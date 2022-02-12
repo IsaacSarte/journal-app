@@ -12,6 +12,10 @@ Rails.application.routes.draw do
     confirmations: "users/confirmations"
   }
 
+  devise_scope :user do
+    post 'users/sign_up', to: 'devise/registrations#create'
+  end
+
   root to: 'home#index'
 
   # Categories Routes
@@ -20,6 +24,8 @@ Rails.application.routes.draw do
   # get '/journals/new' => 'journals#new', as: 'new_journal'
 
   post '/journals' => 'journals#create'
+
+  delete '/journals/:id' => 'journals#destroy', as: 'delete_journal'
 
   # get '/journals/:id' => 'journals#show', as: 'journal'
 
@@ -30,6 +36,8 @@ Rails.application.routes.draw do
   # get '/journals/:journal_id/tasks' => 'tasks#index', as: 'journal_tasks'
 
   post '/journals/:journal_id/tasks' => 'tasks#create'
+
+  delete '/journals/:journal_id/tasks/:id' => 'tasks#destroy', as: 'delete_journal_task'
 
   # get '/journals/:journal_id/tasks/new' => 'tasks#new', as: 'new_journal_task'
 

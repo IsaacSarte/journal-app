@@ -1,0 +1,28 @@
+Task Name: <br/> 
+<%= @task.name %>
+<br/><br/>
+
+Deadline: <%= date_parse(@task.deadline) %>
+<br/>
+
+
+Status: <%= raw task_label(@task)[:html] %>
+
+<br/><br/>
+
+Task Description:
+<%= @task.description %>
+
+<br/>
+
+<%= link_to journal_path(@journal) do%>
+    Back
+<% end %>
+<br/>
+<%= link_to edit_journal_task_path(@journal) do%>
+    Edit Task
+<% end %>
+<br/>
+<%= link_to journal_task_path(@journal), method: :delete, data: {confirm: 'Are you sure?'} do%>
+    Delete Task
+<% end %>
