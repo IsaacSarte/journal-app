@@ -1,67 +1,146 @@
 <%= render 'nav' %>
 
-<%= @journal.name %>
-
-<%= @journal.percent_complete %> Task Completed
-
-<progress value="<%= @journal.percent_complete %>" max="100">
-</progress>
-
-
-<%# Link ng New Task Path %>
-<%= link_to new_journal_task_path(@journal) do%>
-    <i class="fas fa-plus mr-3" aria-hidden="true"></i> Task
-<% end %>
-
-<br/>
-<br/>
-
-<% if @journal.tasks.count == 0 %>
-    <p>No Tasks Yet</p>
-    <%# Link ng New Task Path %>
-    <%= link_to new_journal_task_path(@journal) do%>
-        Add Task Now
-    <% end %>
-<% end %>
-
-<%# if there is or are tasks available %>
-<% @journal.tasks.each do |task| %>
-    <% if task.completed? == false %>
-    <%= raw task_label(task)[:html] %>
-        
-        <div>
-            <%= task.name %>  
-            <br/>          
-            <%= date_parse(task.deadline) %>
+<section id="show-journal" class="show-journal">
+    <div class="container tiles">
+        <div
+            id="task_box"
+            class="box info-box has-text-white box-bg mt-4 has-text-weight-semibold is-flex is-align-items-center is-justify-content-space-between"
+        >
+        <div class="is-size-4">
+            <svg id="taskLogo" xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none">
+                <path d="m13.061 4.939-2.122 2.122L15.879 12l-4.94 4.939 2.122 2.122L20.121 12z" stroke="white" stroke-width="1"></path>
+                <path d="M6.061 19.061 13.121 12l-7.06-7.061-2.122 2.122L8.879 12l-4.94 4.939z" stroke="white" stroke-width="1"></path>
+            </svg>
+            <%= @journal.name %>
         </div>
-        <%= truncate(strip_tags(task.description.to_s), length: 100) %>
-        <div>
-            <%# show task path %>
-            <%= link_to journal_task_path(@journal, task) do%>
-                Show Task
-            <% end %>
-
-            <br/>
-
-            <%# edit task path %>
-            <%= link_to edit_journal_task_path(@journal, task) do%>
-                Edit Task
-            <% end %>
-
-            <br/>
-
-            <%# delete task %>
-            <%= link_to journal_task_path(@journal, task), method: :delete, data: {confirm: 'Are you sure?'} do%>
-                Delete Task
-            <% end %>
-
-            <br/><br/>
+        <div class="task-progress-container is-flex">
+            <div class="mr-3 progress-container">
+                <%= @journal.percent_complete %>% Task Completed
+                <progress 
+                    class="progress is-normal is-success"
+                    value="<%= @journal.percent_complete %>" max="100">
+                </progress>
+            </div>
+            <div class="add-task">
+                <%# Link ng New Task Path %>
+                <%= link_to new_journal_task_path(@journal) do%>
+                    <i class="fas fa-plus mr-3" aria-hidden="true"></i>Task
+                <% end %>
+            </div>
         </div>
+    </div>
+
+    <% if @journal.tasks.count == 0 %>
+        <p>No Tasks Yet</p>
+        <%# Link ng New Task Path %>
+        <%= link_to new_journal_task_path(@journal) do%>
+            Add Task Now
+        <% end %>
     <% end %>
-<% end %>
 
+    <div class="columns is-desktop is-multiline tasks-col">
+    <%# if there is or are tasks available %>
+        <% @journal.tasks.each do |task| %>
+            <% if task.completed? == false %>
+            <div class="column tasks-column">
+                <span class="task-status-label">
+                    <%= raw task_label(task)[:html] %>
+                </span>
+                <br/>
+                <strong><%= task.name %></strong>  
+                <br/>
+                <span class="tasks-time">
+                    <i class='bx bxs-time' ></i>         
+                    <%= date_parse(task.deadline) %>
+                </span>
+                <br/>
+                <i class='bx bxs-chevron-right' ></i>
+                <span class='tasks-desc'>
+                    <%= truncate(strip_tags(task.description.to_s), length: 100) %>
+                </span>
+                <div class='tasks-icons'>
+                    <%# show task path %>
+                    <%= link_to journal_task_path(@journal, task) do%>
+                        <i class='bx bx-expand-alt' ></i>
+                    <% end %>
 
+                    <br/>
 
-<% unless @journal.percent_complete == 0 %>
+                    <%# edit task path %>
+                    <%= link_to edit_journal_task_path(@journal, task) do%>
+                        <i class='bx bxs-edit-alt'></i>
+                    <% end %>
 
-<% end %>
+                    <br/>
+
+                    <%# delete task %>
+                    <%= link_to journal_task_path(@journal, task), method: :delete, data: {confirm: 'Are you sure?'} do%>
+                        <i class='bx bxs-trash' ></i>
+                    <% end %>
+                </div>
+            <% end %>
+            </div>
+        <% end %>
+
+        <br/>
+
+        <% unless @journal.percent_complete == 0 %>
+            <div class="container tiles">
+                <div
+                    id="completed-top-card"
+                    class="box box2 info-box box-bg mt-4 has-text-weight-semibold is-flex is-align-items-center is-justify-content-center"
+                >
+                <div class="is-size-3 has-text-centered">
+                <svg id="taskLogo" xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none">
+                    <path d="m2.394 13.742 4.743 3.62 7.616-8.704-1.506-1.316-6.384 7.296-3.257-2.486zm19.359-5.084-1.506-1.316-6.369 7.279-.753-.602-1.25 1.562 2.247 1.798z" stroke="white" stroke-width="1"></path>
+                </svg>
+                    Completed Tasks
+                </div>
+            </div>
+
+            <div class="columns is-desktop is-multiline completed-col">
+                <% @journal.tasks.each do |task| %>
+                    <% unless task.completed? == false %>
+                        <div class="column completed-columns">
+                            <%= raw task_label(task)[:html] %>
+                            <br/>
+                            <strong><%= task.name %></strong>  
+                            <br/>
+                            <span class="tasks-time">
+                                <i class='bx bxs-time' ></i>         
+                                <%= date_parse(task.deadline) %>
+                            </span>
+                            <br/>
+                            <i class='bx bxs-chevron-right' ></i>
+                            <span class='tasks-desc'>
+                                <%= truncate(strip_tags(task.description.to_s), length: 100) %>
+                            </span>
+                            <br/>
+                            <div class='tasks-icons'>
+                            <%# show task path %>
+                                <%= link_to journal_task_path(@journal, task) do%>
+                                    <i class='bx bx-expand-alt' ></i>
+                                <% end %>
+
+                                <br/>
+
+                                <%# edit task path %>
+                                <%= link_to edit_journal_task_path(@journal, task) do%>
+                                    <i class='bx bxs-edit-alt'></i>
+                                <% end %>
+
+                                <br/>
+
+                                <%# delete task %>
+                                <%= link_to journal_task_path(@journal, task), method: :delete, data: {confirm: 'Are you sure?'} do%>
+                                    <i class='bx bxs-trash' ></i>
+                                <% end %>
+                            </div>
+                        </div>
+                    <% end %>
+                <% end %>
+            </div>
+        <% end %>
+    </div>
+
+</section>

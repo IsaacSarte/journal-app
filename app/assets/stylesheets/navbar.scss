@@ -73,15 +73,19 @@
     }
 
     .j-animate,
-    .l-animate {
+    .l-animate,
+    #j-svg,
+    #l-svg {
         margin-top: 1.25rem !important;
     }
 
-    .j-animate {
+    .j-animate,
+    #j-svg {
         height: 35px !important;
     }
 
-    .l-animate {
+    .l-animate,
+    #l-svg {
         height: 40px !important;
     }
 
