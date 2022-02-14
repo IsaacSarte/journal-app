@@ -31,11 +31,16 @@
     </div>
 
     <% if @journal.tasks.count == 0 %>
-        <p>No Tasks Yet</p>
-        <%# Link ng New Task Path %>
-        <%= link_to new_journal_task_path(@journal) do%>
-            Add Task Now
-        <% end %>
+        <div class="empty-task-container container is-flex is-justify-content-center is-align-items-center">
+            <%= image_tag("empty-animate.svg", :alt => 'empty tasks image', class: "new-category-svg") %>
+            <div class="no-tasks-button is-flex is-justify-content-center has-text-centered">
+                <p>No Tasks Yet</p>
+                <%# Link ng New Task Path %>
+                <%= link_to new_journal_task_path(@journal) do%>
+                    <i class="fas fa-plus mr-3" aria-hidden="true"></i>Add Task Now
+                <% end %>
+            </div>
+        </div>
     <% end %>
 
     <div class="columns is-desktop is-multiline tasks-col">
