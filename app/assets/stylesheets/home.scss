@@ -24,13 +24,16 @@
     padding: 0;
     box-sizing: border-box;
     font-family: "Poppins", sans-serif;
-    // overflow: hidden;
 }
 
 body {
     width: 100%;
-    height: 100vh;
+    height: 100%;
     background-color: rgb(32, 35, 48);
+}
+
+::-webkit-scrollbar {
+    display: none;
 }
 
 header {
@@ -230,6 +233,18 @@ header {
     }
 }
 
+@keyframes slide-top {
+    0% {
+        -webkit-transform: translateY(50px);
+        transform: translateY(50px);
+    }
+
+    100% {
+        -webkit-transform: translateY(0px);
+        transform: translateY(0px);
+    }
+}
+
 .fa-linkedin-in {
     -webkit-animation: slide-right 0.75s ease-in 0.25s both;
     animation: slide-right 0.75s ease-in 0.25s both;
@@ -251,6 +266,18 @@ header {
 }
 
 @-webkit-keyframes slide-right {
+    0% {
+        -webkit-transform: translateX(-100px);
+        transform: translateX(-100px);
+    }
+
+    100% {
+        -webkit-transform: translateX(0px);
+        transform: translateX(0px);
+    }
+}
+
+@keyframes slide-right {
     0% {
         -webkit-transform: translateX(-100px);
         transform: translateX(-100px);

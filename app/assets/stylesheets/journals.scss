@@ -1,3 +1,125 @@
 // Place all the styles related to the journals controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+.container {
+    overflow-x: hidden;
+}
+
+.box {
+    background-color: #303447;
+    border-radius: 2.5px !important;
+    // box-shadow: 0 0.5em 1em -0.125em rgb(10 10 10 / 10%), 0 0 0 1px rgb(10 10 10 / 2%);
+    color: #4a4a4a;
+    display: block;
+    padding: 1.25rem;
+}
+
+.journal-user {
+    position: absolute;
+    right: 1rem;
+    font-size: 1rem;
+    margin-top: -0.75rem;
+
+    .bxs-user-circle {
+        position: absolute;
+        font-size: 1.25rem;
+        margin-left: -1.5rem;
+        margin-top: 0.075rem;
+    }
+}
+
+.column {
+    background: #272a3a;
+    margin: 0.75rem;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    -webkit-box-shadow: -1px 1px 1px 1px #272b3a;
+    -moz-box-shadow: -1px 1px 1px 1px #272b3a;
+    box-shadow: -1px 1px 1px 1px #272b3a;
+}
+
+.journals-column {
+    strong {
+        color: #fff;
+        font-size: 1.5rem;
+    }
+
+    span {
+        color: #fbfbfbbd;
+        font-size: 1.25rem;
+        line-height: 2;
+
+        i {
+            color: #fbfbfbbd;
+        }
+    }
+
+    .journal-time {
+        font-size: 1rem;
+        color: #fbfbfb96;
+    }
+
+    .journal-icons {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        margin-top: 1.5rem;
+        gap: 0.5rem;
+
+        i {
+            font-size: 1.25rem;
+            transition: 0.25s ease forwards;
+        }
+
+        .bxs-add-to-queue {
+            color: #fbfbfb96;
+        }
+
+        .bxs-edit {
+            color: rgb(211, 211, 7);
+        }
+
+        .bxs-trash {
+            color: rgb(219, 60, 12);
+        }
+
+        i:hover {
+            transform: scale(1.1);
+        }
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .columns.is-desktop {
+        display: flex;
+        padding: 0 10%;
+    }
+
+    .column {
+        flex: 1 0 21%;
+    }
+}
+
+@media screen and (min-width: 360px) {
+    .box {
+        width: 95%;
+        margin: 0 auto;
+    }
+
+    .journal-user {
+        font-size: 0.75rem;
+    }
+
+    .bxs-user-circle {
+        font-size: 1rem !important;
+    }
+
+    .column {
+        width: 85%;
+        margin: 0 auto !important;
+        margin-top: 1rem !important;
+        transform: translateX(1px);
+    }
+}
