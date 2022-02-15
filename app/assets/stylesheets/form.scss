@@ -130,11 +130,12 @@
     .new-category-svg {
         width: 225px;
         margin-top: 0rem;
+        z-index: 99999;
     }
 
     .input {
         max-width: 125% !important;
-        width: 125% !important;
+        width: 100% !important;
     }
 
     .category-buttons button {
