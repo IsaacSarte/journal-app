@@ -22,7 +22,7 @@ class TasksController < ApplicationController
         @task.position = @journal.get_next_task_position
 
         if @task.save
-            redirect_to @journal, notice: 'Task was successfully created'
+            redirect_to @journal
         else
             render :new
         end
@@ -30,7 +30,7 @@ class TasksController < ApplicationController
 
     def update
         if @task.update(task_params)
-            redirect_to @journal, notice: 'Task was successfully updated'
+            redirect_to @journal
         else
             render :edit
         end
@@ -38,7 +38,7 @@ class TasksController < ApplicationController
 
     def destroy
         @task.destroy
-        redirect_to @journal, notice: 'Task was successfully deleted'
+        redirect_to @journal
     end
 
     private
