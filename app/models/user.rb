@@ -6,4 +6,6 @@ class User < ApplicationRecord
          :confirmable
 
   has_many :journals
+
+  validates :username, presence: true
 end

@@ -27,6 +27,10 @@
         <%= render "devise/shared/error_messages", resource: resource %>
 
         <div class="field">
+          <%= f.text_field :username, placeholder: '👤 Username', class: 'input is-medium login-input', autofocus: true %>
+        </div>
+
+        <div class="field">
           <%= f.email_field :email, placeholder: '👤 Email', autofocus: true, class: 'input is-medium login-input', autocomplete: "email" %>
         </div>
 
