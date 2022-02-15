@@ -1,3 +1,5 @@
+<%= javascript_pack_tag 'alert' %>
+
 <section class="home" id="home">
 
     <header id="header">
@@ -14,6 +16,12 @@
     </header>
 
     <main id="main">
+
+        <% if notice %>
+            <p class="alert alert-success"><%= notice %>
+                <i class='bx bx-x'></i>
+            </p>
+        <% end %>
 
         <svg id="logo" width="627" height="104" viewBox="0 0 627 104" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M56.632 1.63198V75.792C56.632 84.048 54.088 90.672 49 95.664C43.912 100.56 37.192 103.008 28.84 103.008C20.392 103.008 13.624 100.512 8.53599 95.52C3.44799 90.432 0.903992 83.52 0.903992 74.784H14.008C14.104 79.68 15.352 83.664 17.752 86.736C20.248 89.808 23.944 91.344 28.84 91.344C33.736 91.344 37.384 89.904 39.784 87.024C42.184 84.048 43.384 80.304 43.384 75.792V1.63198H56.632Z" stroke="white" stroke-width="5"/>

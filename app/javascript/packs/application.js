@@ -15,19 +15,7 @@ Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
 
-window.onload = () => {
-    const logo = document.querySelectorAll('#logo path');
 
-    for(let i = 0; i < logo.length; i++) {
-        console.log(`Letter ${i} is ${logo[i].getTotalLength()}`);
-    }
-
-    console.log('--------------------------------------------------');
-
-    const tasks = document.querySelectorAll('#taskLogo path');
-
-    for(let j = 0; j < tasks.length; j++) {
-        console.log(`Length ${j} of task logo is ${tasks[j].getTotalLength()}`);
-    }
-
-}
+document.addEventListener('turbolinks:load', () => { 
+    
+})

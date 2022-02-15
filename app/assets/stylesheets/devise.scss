@@ -8,6 +8,29 @@
     }
 }
 
+.error-message-login {
+    color: red;
+    font-weight: 550;
+}
+
+.bx-x {
+    color: red;
+    cursor: pointer;
+    font-size: 1.5rem;
+}
+
+.alert-success {
+    background: #303447;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    text-align: center;
+    padding: 1rem 1rem;
+    width: 75%;
+    margin: 0 auto;
+    margin-top: 1rem;
+}
+
 .login-category,
 .signup-category {
     gap: 15%;

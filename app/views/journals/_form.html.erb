@@ -1,7 +1,7 @@
 <%= form_with(model: journal) do |form| %>
 
     <% if journal.errors.any? %>
-        <ul>
+        <ul class="error-message">
             <% journal.errors.each do |error| %>
                 <li> <%= error.full_message %> </li>
             <% end %>

@@ -23,6 +23,7 @@
 
 
       <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+        <p class="error-message-login"><%= alert %></p>
         <div class="field">
           <%= f.email_field :email, placeholder: '👤 Email', autofocus: true, class: 'input is-medium login-input', autocomplete: "email" %>
         </div>

@@ -2,7 +2,7 @@
 
   <% if task.errors.any? %>
 
-    <ul>
+    <ul class="error-message">
         <% task.errors.each do |error| %>
             <li><%= error.full_message %></li>
         <% end %>

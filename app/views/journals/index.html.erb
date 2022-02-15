@@ -1,4 +1,12 @@
+<%= javascript_pack_tag 'alert' %>
+
 <%= render 'navbar' %>
+
+<% if notice %>
+    <p class="alert alert-success"><%= notice %>
+        <i class='bx bx-x'></i>
+    </p>
+<% end %>
 
 <section id="index-journal" class="index-journal">
 
