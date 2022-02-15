@@ -1,4 +1,4 @@
-<%= form_with(model: [journal, task]) do |form| %>
+<%= form_with(model: [journal, task], class: 'task-form') do |form| %>
 
   <% if task.errors.any? %>
 
@@ -12,9 +12,13 @@
   <% end %>
 
 
-    <%= form.text_field :name, placeholder: "Task Name", autocomplete: :off %>
+    <%= form.text_field :name, placeholder: "✏️ Task Name", class: 'input is-normal task-input', autocomplete: :off %>
 
-    <%= form.rich_text_area :description, placeholder: "Task Description", autocomplete: :off, maxlength: 2500 %>
+    <br/><br/>
+
+    <%= form.rich_text_area :description, placeholder: "📃 Task Description", class: 'textarea is-normal task-desc-ta', autocomplete: :off, maxlength: 2500 %>
+
+    <br/>
 
 
     <%= form.label :deadline do%>
@@ -22,22 +26,27 @@
     <% end %>
     <%= form.date_field :deadline %>
 
+    <br/>
 
-  <%= form.label :completed do%>
-    <span>Set Status:</span>
-  <% end %>
-  <%= form.select :completed, Task::COMPLETED_OPTIONS %>
+    <%= form.label :completed do%>
+      <span>Set Status:</span>
+    <% end %>
+    <%= form.select :completed, Task::COMPLETED_OPTIONS, class: "select" %>
 
-    <%= form.button class: "button start-now-two" do %> 
+    <br/>
+
+    <div class="is-flex is-align-items-center task-buttons ">
+      <%= form.button class: "button start-now-two" do %> 
         <%= raw '<i class="fas fa-plus mr-3"></i>' if action_name.capitalize == 'Create' %>
         <%= raw '<i class="fas fa-plus mr-3"></i>' if action_name.capitalize == 'New' %>
         <%= raw '<i class="fas fa-edit mr-3"></i>' if action_name.capitalize == 'Update' %>
         <%= raw '<i class="fas fa-edit mr-3"></i>' if action_name.capitalize == 'Edit' %>
         <%= :new if action_name.capitalize == "New" %><%= :edit if action_name.capitalize == "Edit" %> <%= :task %>
-    <% end %>
+      <% end %>
 
       <%= link_to journal do%>
         Cancel
       <% end %>
+    </div>
 
 <% end %>

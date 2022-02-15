@@ -40,3 +40,19 @@
 trix-toolbar .trix-button-row {
   display: none !important;
 }
+
+#task_description>div {
+  color: #000000 !important;
+}
+
+.textarea:not([rows]) {
+  min-width: 125%;
+  width: 125%;
+}
+
+@media screen and (max-width: 768px) {
+  .textarea:not([rows]) {
+    min-width: 100%;
+    width: 100%;
+  }
+}

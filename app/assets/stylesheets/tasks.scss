@@ -1,3 +1,67 @@
 // Place all the styles related to the tasks controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+.new-task {
+    top: 10%;
+    left: -10%;
+    transform: translate(2.5%, 10%);
+    gap: 25%;
+}
+
+.task-input {
+    width: 125% !important;
+}
+
+.textarea {
+    color: #000000 !important;
+}
+
+.start-now-two {
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #fff;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+}
+
+.start-now-two:hover {
+    color: #fff;
+}
+
+#task_completed {
+    color: #000;
+
+    option {
+        color: #000;
+    }
+}
+
+.task-buttons {
+    transform: translateX(-20px);
+    font-size: 1.5rem;
+
+    a {
+        color: red;
+        transform: translateY(2px);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .new-task {
+        margin-top: -5rem;
+    }
+
+    .task-input {
+        width: 100% !important;
+    }
+
+    .task-logo {
+        transform: translateX(20px) !important;
+    }
+
+    .task-form {
+        transform: translateX(20px) !important;
+    }
+}
