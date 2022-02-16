@@ -2,15 +2,23 @@
 
 require 'rails_helper'
 
-RSpec.describe Journal, type: :model do
-  # it { expect(described_class.new).to validate_presence_of :name }
-  # it { expect(described_class.new).to validate_length_of :name }
-  subject {
-    described_class.new
-  }
-
-  it "is valid with all attributes" do
-    subject.name = 'Testing Category'
-    expect(subject).to be_valid
+describe Journal do
+  before do
+    @Journal = Journal.new(name: "Test Category")
   end
+
+  subject { @Journal }
+
+  it { should respond_to(:name) }
+
+  describe "when category name is not present" do
+    before { @Journal.name = " " }
+    it { should_not be_valid}   
+  end  
+
+  describe "with a category name more than 20 characters" do
+    before { @Journal.name = "jName" * 20 }
+    it { should_not be_valid }
+  end
+
 end
