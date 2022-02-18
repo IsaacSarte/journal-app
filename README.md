@@ -9,7 +9,6 @@
 1. CRUD using `rails g model Journal` for creation of models/tables. <br/>
 
 2. Devise used by `rails g devise:install` for Users' own Set of Personal Journal/Category with Tasks and Description.
-<br/>
 
 * ### **Cloning the App**
 
