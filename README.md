@@ -4,20 +4,20 @@
 
 ## Functionalities:
 
-* **###Private Journal CRUD with Foreign Keys**
+* ### **Private Journal CRUD with Foreign Keys**
 
 1. CRUD using `rails g model Journal` for creation of models/tables. <br/>
 
 2. Devise used by `rails g devise:install` for Users' own Set of Personal Journal/Category with Tasks and Description.
 <br/>
 
-* **###Cloning the App**
+* ### **Cloning the App**
 
 1. `git clone https://github.com/IsaacSarte/journal-app.git`
 
 <br/>
 
-* **###What to do after Cloning**
+* ### **What to do after Cloning**
 
 1. In the root path of the app, type `bundle install`
 
@@ -39,7 +39,7 @@
 
 ![ERD](https://scontent-xsp1-3.xx.fbcdn.net/v/t1.15752-9/260886917_540443567397215_2435191783320079728_n.png?_nc_cat=109&ccb=1-5&_nc_sid=ae9488&_nc_eui2=AeFpPMH3Yy5BYI2yLT1QBb7lXcMMzzIKMG1dwwzPMgowbZ7dv7SbjKC34hALBF273pN7it9J8yKvq91jiXNY4DBA&_nc_ohc=EL1Vd8uBEjAAX-rWitr&_nc_ht=scontent-xsp1-3.xx&oh=03_AVKiuCciGxs91PpK5tuvfQR8-6SsUXFyyJG7Jutfjy8iPA&oe=62339D6A)
 
-* **##Sample Webapp Screenshot**
+* ### **Sample Webapp Screenshot**
 
 1. PC/Laptop
 
