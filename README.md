@@ -14,20 +14,20 @@
 * Cloning the App
 
 1. `git clone https://github.com/IsaacSarte/journal-app.git`
+
 <br/>
 
 * What to do after Cloning
 
 1. In the root path of the app, type `bundle install`
-<br/>
 
 2. Next, type `npm install`
-<br/>
 
 3. Create the database by typing `rails db:create`
-<br/>
 
 4. Lastly, migrate the databse, `rails db:migrate`
+
+<br/>
 
 * Other Functionalities
 
