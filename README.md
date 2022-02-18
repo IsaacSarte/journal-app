@@ -15,7 +15,6 @@
 
 1. `git clone https://github.com/IsaacSarte/journal-app.git`
 
-<br/>
 
 * ### **What to do after Cloning**
 
