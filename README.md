@@ -32,10 +32,8 @@
 * Other Functionalities
 
 1. Rich Text Area form for Description
-<br/>
 
 2. Mobile Responsive 
-<br/>
 
 # ERD:
 
