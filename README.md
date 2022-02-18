@@ -25,7 +25,6 @@
 
 4. Lastly, migrate the databse, `rails db:migrate`
 
-<br/>
 
 ## Other Functionalities:
 
