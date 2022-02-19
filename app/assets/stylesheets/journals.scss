@@ -2,16 +2,30 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
-.container {
-    overflow-x: hidden;
-}
-
 .box {
     background-color: #303447;
     border-radius: 2.5px !important;
     color: #4a4a4a;
     display: block;
-    padding: 1.25rem;
+    padding: 1rem;
+}
+
+.due-box {
+    width: 90%;
+    margin: 0 auto;
+    background-color: #473043;
+}
+
+.your-tasks {
+    width: 90%;
+    margin: 0 auto;
+    background: #6e743daa;
+}
+
+.completed {
+    width: 90%;
+    margin: 0 auto;
+    background: #3d744d;
 }
 
 .journal-user {
@@ -39,6 +53,33 @@
     -webkit-box-shadow: -1px 1px 1px 1px #272b3a;
     -moz-box-shadow: -1px 1px 1px 1px #272b3a;
     box-shadow: -1px 1px 1px 1px #272b3a;
+}
+
+// 
+
+.tile-contents {
+    background: #303447;
+    border-radius: 5px !important;
+    padding: 2rem;
+    // width: 100%;
+    margin: 1rem;
+}
+
+.tile.is-ancestor {
+    margin-left: 0rem !important;
+    margin-right: 0rem !important;
+    margin-top: -0.75rem;
+}
+
+.tile-contents {
+    strong {
+        font-size: 1.5rem;
+        color: #fff;
+    }
+}
+
+.button {
+    background: transparent;
 }
 
 .journal-icons,
@@ -235,6 +276,15 @@
 
     .bxs-user-circle {
         font-size: 1rem !important;
+    }
+
+    .tile-contents {
+        width: 90%;
+    }
+
+    .tile.is-child {
+        /* margin: 0!important; */
+        margin-left: 0.5rem !important;
     }
 
     .column {
