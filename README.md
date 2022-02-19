@@ -2,6 +2,8 @@
 
 ## Journal App using Rails v6
 
+* ### **Demo Link** - https://isaac-journal-app.herokuapp.com/
+
 ## Functionalities:
 
 * ### **Private Journal CRUD with Foreign Keys**
