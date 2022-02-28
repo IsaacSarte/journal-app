@@ -325,46 +325,46 @@ header {
     }
 }
 
-// @media screen and (max-height: 800px) {
-//     header .header-logo {
-//         margin-top: 1rem;
-//     }
+@media screen and (max-width: 1024px) and (max-height: 800px) {
+    header .header-logo {
+        margin-top: 0rem;
+    }
 
-//     #logo {
-//         max-width: 768px;
-//         width: 400px;
-//     }
+    #logo {
+        max-width: 768px;
+        width: 300px;
+    }
 
-//     #j-svg {
-//         max-width: 600px;
-//         width: 50px;
-//         height: 40px;
-//     }
+    #j-svg {
+        max-width: 600px;
+        width: 50px;
+        height: 40px;
+    }
 
-//     #l-svg {
-//         max-width: 600px;
-//         width: 50px;
-//         height: 45px;
-//     }
+    #l-svg {
+        max-width: 600px;
+        width: 50px;
+        height: 45px;
+    }
 
-//     .btn-start {
-//         margin-top: 2rem;
-//         padding: 1rem 1.5rem;
-//     }
+    .btn-start {
+        margin-top: 2rem;
+        padding: 1rem 1.5rem;
+    }
 
-//     #section {
-//         margin-top: 50vh;
-//     }
+    #section {
+        margin-top: 50vh;
+    }
 
-//     .icon-list {
-//         max-width: 50rem;
-//         margin: 0 auto;
-//     }
+    .icon-list {
+        max-width: 50rem;
+        margin: 0 auto;
+    }
 
-//     .icon-link {
-//         font-size: 1.75rem;
-//     }
-// }
+    .icon-link {
+        font-size: 1.75rem;
+    }
+}
 
 // @media screen and (max-height: 600px) {
 //     header .header-logo {

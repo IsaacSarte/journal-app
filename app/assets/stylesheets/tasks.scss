@@ -4,8 +4,7 @@
 
 .new-task {
     top: 10%;
-    left: -10%;
-    transform: translate(2.5%, 10%);
+    transform: translate(0%, 10%);
     gap: 25%;
 }
 
@@ -120,6 +119,12 @@
         color: white;
         font-size: 1.5rem;
         font-weight: 550;
+    }
+}
+
+@media screen and (max-width: 1024px) and (max-height: 700px) {
+    .new-task {
+        gap: 15%;
     }
 }
 

@@ -126,6 +126,33 @@
     animation: line-animation 2s ease forwards 1.3s;
 }
 
+@media screen and (max-width: 1024px) and (max-height: 700px) {
+    .new-category-svg {
+        width: 300px;
+        margin-top: 0rem;
+        z-index: 99999;
+    }
+
+    .login-form {
+        margin-top: -5rem;
+    }
+
+    .input {
+        max-width: 125% !important;
+        width: 100% !important;
+    }
+
+    .category-buttons button {
+        font-size: 1rem;
+        cursor: pointer;
+    }
+
+    .category-buttons a {
+        color: red;
+        font-size: 1rem;
+    }
+}
+
 @media screen and (max-width: 768px) {
     .is-flex {
         display: flex;
@@ -134,7 +161,7 @@
 
     .new-category-svg {
         width: 225px;
-        margin-top: 0rem;
+        margin-top: 2rem;
         z-index: 99999;
     }
 
@@ -151,5 +178,11 @@
     .category-buttons a {
         color: red;
         font-size: 1rem;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .new-category-svg {
+        margin-top: 0rem;
     }
 }
