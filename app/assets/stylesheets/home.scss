@@ -175,10 +175,11 @@ header {
 
 .icon-list {
     width: 100%;
-    max-width: 50rem;
+    // max-width: 25rem;
     padding: 0 1.5rem;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    align-items: center;
 }
 
 .icon-item {
@@ -325,14 +326,14 @@ header {
     }
 }
 
-@media screen and (max-width: 1024px) and (max-height: 800px) {
+@media screen and (max-width: 1440px) and (max-height: 1080px) {
     header .header-logo {
-        margin-top: 0rem;
+        margin-top: 1rem;
     }
 
     #logo {
         max-width: 768px;
-        width: 300px;
+        width: 350px;
     }
 
     #j-svg {
@@ -357,7 +358,7 @@ header {
     }
 
     .icon-list {
-        max-width: 50rem;
+        // max-width: 25rem;
         margin: 0 auto;
     }
 
