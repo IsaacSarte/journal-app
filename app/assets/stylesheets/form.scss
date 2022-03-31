@@ -138,7 +138,7 @@
     }
 
     .signup-form {
-        margin-top: 0rem;
+        margin-top: -5rem;
     }
 
     .input {
@@ -161,6 +161,10 @@
     .is-flex {
         display: flex;
         flex-direction: column;
+    }
+
+    .signup-form {
+        margin-top: 0rem;
     }
 
     .new-category-svg {
